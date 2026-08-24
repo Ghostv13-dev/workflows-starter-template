@@ -1,39 +1,23 @@
-# Cloudflare Workflows Starter Template
-
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/workflows-starter-template)
-
-<!-- dash-content-start -->
-
-A real-time, interactive demonstration of [Cloudflare Workflows](https://developers.cloudflare.com/workflows) with live updates via WebSockets and Durable Objects. This template showcases durable multi-step workflows with time-based delays, event-driven pauses, and real-time status visualization.
-
-<!-- dash-content-end -->
-
-![Cloudflare Workflows Starter Template](assets/template-screenshot.png)
-
-## Getting Started
-
-### Installation
-
-```bash
-npm install
-```
-
-### Development
-
-```bash
-npm run dev
-```
-
-Visit `http://localhost:5173` to see the interactive demo.
-
-### Deployment
-
-```bash
-npm run deploy
-```
-
-## Learn More
-
-- [Cloudflare Workflows Documentation](https://developers.cloudflare.com/workflows)
-- [Durable Objects Documentation](https://developers.cloudflare.com/durable-objects)
-- [Workers Documentation](https://developers.cloudflare.com/workers)
+- name: PDM update dependencies
+  # You may pin to the exact commit or the version.
+  # uses: pdm-project/update-deps-action@22852fcff9a131d732730e8db92cc9502643a260
+  uses: pdm-project/update-deps-action@v1.12
+  with:
+    # A personal access token
+    token: # optional, default is ${{ github.token }}
+    # The commit message
+    commit-message: # optional, default is chore: Update pdm.lock
+    # The PR title
+    pr-title: # optional, default is chore: Update pdm.lock
+    # The update strategy, can be 'reuse', 'eager' or 'all'
+    update-strategy: # optional, default is reuse
+    # The save strategy, can be 'compatible', 'wildcard', 'exact' or 'minimum'
+    save-strategy: # optional, default is minimum
+    # Ignore the version constraint of packages in pyproject.toml
+    unconstrained: # optional, default is false
+    # Whether install PDM plugins before update
+    install-plugins: # optional, default is false
+    # Whether commit message contains signed-off-by
+    sign-off-commit: # optional, default is false
+    # Sign commits as github-actions[bot]
+    sign-commits: # optional, default is true
